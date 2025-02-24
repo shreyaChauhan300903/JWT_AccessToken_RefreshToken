@@ -14,6 +14,11 @@ const posts = [
     title: "Post 2",
   },
 ];
+
+app.get("/shreya",(req,res)=>{
+    console.log("The API was hit");
+})
+
 app.get("/posts", authenticateToken, (req, res) => {
   res.json(posts.filter((post) => post.username === req.user.name));
 });
